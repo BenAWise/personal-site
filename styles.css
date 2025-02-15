@@ -40,7 +40,8 @@
 }
 
 body {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Archivo', sans-serif;
+    font-weight: 300; /* light weight for body */
     letter-spacing: 0.05em; /* +50 kerning */
     background-color: var(--bg-color);
     color: var(--text-color);
@@ -171,7 +172,8 @@ section {
     margin-top: var(--spacing-lg);
     padding-top: var(--spacing-md);
     border-top: 1px solid var(--text-color);
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Archivo', sans-serif;
+    font-weight: 400; /* regular weight */
     letter-spacing: 0.05em; /* +50 kerning */
 }
 
@@ -188,7 +190,8 @@ section {
 }
 
 .description {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Archivo', sans-serif;
+    font-weight: 400; /* regular weight */
     letter-spacing: 0.05em; /* +50 kerning */
     font-size: 0.9rem;
     margin: var(--spacing-xs) 0 var(--spacing-sm);
