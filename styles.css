@@ -6,7 +6,7 @@
     --color-macbook: #888B8D;
     
     /* Light theme */
-    --bg-color: var(--color-white);
+    --bg-color: var(--color-newsprint);
     --text-color: var(--color-black);
     --link-color: var(--color-black);
     --hover-color: var(--color-macbook);
@@ -65,7 +65,6 @@ header {
     font-family: 'Archivo', sans-serif;
     font-weight: 500; /* medium weight */
     font-size: 2rem;
-    text-transform: uppercase;
 }
 
 /* Theme toggle button */
