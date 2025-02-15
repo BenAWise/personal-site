@@ -40,9 +40,9 @@
 }
 
 body {
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 400; /* regular weight for better readability */
-    letter-spacing: 0.05em; /* +50 kerning */
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 400;
+    letter-spacing: 0.02em; /* reduced kerning for monospace */
     background-color: var(--bg-color);
     color: var(--text-color);
     line-height: 1.6;
@@ -63,9 +63,10 @@ header {
 }
 
 .site-title {
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 600; /* semi-bold for better contrast */
-    font-size: 2rem;
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 500; /* medium weight for title */
+    font-size: 1.75rem; /* slightly smaller for monospace */
+    letter-spacing: -0.02em; /* tighter spacing for title */
 }
 
 /* Theme toggle button */
@@ -172,9 +173,9 @@ section {
     margin-top: var(--spacing-lg);
     padding-top: var(--spacing-md);
     border-top: 1px solid var(--text-color);
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 400; /* regular weight */
-    letter-spacing: 0.05em; /* +50 kerning */
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 400;
+    letter-spacing: 0.02em; /* reduced kerning for monospace */
 }
 
 .subscribe-link {
@@ -190,9 +191,9 @@ section {
 }
 
 .description {
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 400; /* regular weight */
-    letter-spacing: 0.05em; /* +50 kerning */
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 400;
+    letter-spacing: 0.02em; /* reduced kerning for monospace */
     font-size: 0.9rem;
     margin: var(--spacing-xs) 0 var(--spacing-sm);
     color: var(--hover-color);
