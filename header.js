@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Create the header content with home link
     const headerContent = `
-        <h1 class="site-title"><a href="/" style="text-decoration: none; color: inherit;">Ben A. Wise</a></h1>
+        <h1 class="site-title"><a href="/" class="site-title-link">Ben A. Wise</a></h1>
         <div class="theme-switch-wrapper">
             <button id="theme-toggle" aria-label="Toggle dark mode">
                 <div class="switch">
