@@ -109,6 +109,21 @@ header {
     transform: translateX(16px);
 }
 
+/* Article styles */
+article h1 {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 3rem;
+    margin-bottom: var(--spacing-sm);
+    letter-spacing: -0.02em;
+}
+
+article time {
+    display: block;
+    color: var(--hover-color);
+    margin-bottom: var(--spacing-lg);
+    font-style: italic;
+}
+
 /* Typography */
 h2 {
     font-family: 'IBM Plex Mono', monospace;
