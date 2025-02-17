@@ -59,7 +59,20 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: var(--spacing-lg);
+    margin: 0;
+    padding: 2rem 0;
+    height: auto;
+    position: relative;
+}
+
+/* Ensure main content starts at same position */
+main {
+    margin-top: 2rem;
+}
+
+/* Consistent spacing for article and homepage content */
+.intro, article {
+    margin-top: 0;
 }
 
 .site-title {
@@ -67,6 +80,14 @@ header {
     font-weight: 500; /* medium weight for title */
     font-size: 1.75rem; /* slightly smaller for monospace */
     letter-spacing: -0.02em; /* tighter spacing for title */
+    margin: 0;
+    padding: 0;
+}
+
+.site-title-link {
+    text-decoration: none;
+    color: inherit;
+    display: inline-block; /* Prevents position shifting */
 }
 
 /* Theme toggle button */
