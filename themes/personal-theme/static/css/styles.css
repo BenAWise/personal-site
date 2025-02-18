@@ -40,6 +40,11 @@
     box-sizing: border-box;
 }
 
+html {
+    overflow-y: scroll;
+    margin-right: calc(-1 * (100vw - 100%));
+}
+
 body {
     font-family: 'IBM Plex Mono', monospace;
     font-weight: 400;
@@ -48,7 +53,10 @@ body {
     color: var(--text-color);
     line-height: 1.6;
     transition: background-color var(--transition-fast), color var(--transition-fast);
-    padding-top: var(--header-height); /* Add padding for fixed header */
+    padding-top: var(--header-height);
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
 }
 
 .container {
@@ -59,7 +67,7 @@ body {
 
 header {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     padding: var(--spacing-md) var(--spacing-lg);
     height: var(--header-height);
@@ -74,10 +82,18 @@ header {
 
 header .container {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     width: 100%;
     padding: 0;
+    position: relative;
+}
+
+.theme-switch-wrapper {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 /* Ensure main content starts at same position */
