@@ -3,7 +3,10 @@ name: Deploy Hugo site
 on:
   push:
     branches:
-      - hugo-test  # Changed from main to hugo-test
+      - hugo-test
+
+permissions:
+  contents: write
 
 jobs:
   deploy:
@@ -28,4 +31,4 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
-          publish_branch: gh-pages-test  # Changed to a test branch
+          publish_branch: gh-pages-test
