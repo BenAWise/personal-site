@@ -16,6 +16,7 @@
     --spacing-sm: 1rem;
     --spacing-md: 1.5rem;
     --spacing-lg: 2rem;
+    --header-height: 100px;
     
     /* Transitions */
     --transition-fast: 0.3s;
@@ -42,11 +43,12 @@
 body {
     font-family: 'IBM Plex Mono', monospace;
     font-weight: 400;
-    letter-spacing: 0.02em; /* reduced kerning for monospace */
+    letter-spacing: 0.02em;
     background-color: var(--bg-color);
     color: var(--text-color);
     line-height: 1.6;
     transition: background-color var(--transition-fast), color var(--transition-fast);
+    padding-top: var(--header-height); /* Add padding for fixed header */
 }
 
 .container {
@@ -59,15 +61,28 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 0;
-    padding: 2rem 0;
-    height: auto;
-    position: relative;
+    padding: var(--spacing-md) var(--spacing-lg);
+    height: var(--header-height);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--bg-color);
+    z-index: 1000;
+    transition: background-color var(--transition-fast);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0;
 }
 
 /* Ensure main content starts at same position */
 main {
-    margin-top: 2rem;
+    margin-top: var(--spacing-lg);
 }
 
 /* Consistent spacing for article and homepage content */
@@ -77,9 +92,9 @@ main {
 
 .site-title {
     font-family: 'IBM Plex Mono', monospace;
-    font-weight: 500; /* medium weight for title */
-    font-size: 1.75rem; /* slightly smaller for monospace */
-    letter-spacing: -0.02em; /* tighter spacing for title */
+    font-weight: 500;
+    font-size: 1.75rem;
+    letter-spacing: -0.02em;
     margin: 0;
     padding: 0;
 }
@@ -87,7 +102,7 @@ main {
 .site-title-link {
     text-decoration: none;
     color: inherit;
-    display: inline-block; /* Prevents position shifting */
+    display: inline-block;
 }
 
 /* Theme toggle button */
@@ -211,7 +226,7 @@ section {
     border-top: 1px solid var(--text-color);
     font-family: 'IBM Plex Mono', monospace;
     font-weight: 400;
-    letter-spacing: 0.02em; /* reduced kerning for monospace */
+    letter-spacing: 0.02em;
 }
 
 .subscribe-link {
@@ -229,7 +244,7 @@ section {
 .description {
     font-family: 'IBM Plex Mono', monospace;
     font-weight: 400;
-    letter-spacing: 0.02em; /* reduced kerning for monospace */
+    letter-spacing: 0.02em;
     font-size: 0.9rem;
     margin: var(--spacing-xs) 0 var(--spacing-sm);
     color: var(--hover-color);
@@ -239,6 +254,10 @@ section {
 @media (max-width: 768px) {
     .container {
         padding: var(--spacing-md);
+    }
+
+    header {
+        padding: var(--spacing-sm);
     }
 
     .site-title {
