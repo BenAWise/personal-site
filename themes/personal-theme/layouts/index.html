@@ -1,0 +1,35 @@
+{{ define "main" }}
+    <section class="intro">
+        <p>I'm a writer turned AI enthusiast turned "Holy shit we've just started merging with this weird, mathematically alien intelligence. I better write about this for posterity."</p>
+    </section>
+
+    <section>
+        <h2>Latest Thoughts</h2>
+        <ul>
+            {{ $posts := where site.RegularPages "Section" "posts" }}
+            {{ if $posts }}
+                {{ range $posts }}
+                <li>
+                    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                    <span class="date">{{ .Date.Format "January 2, 2006" }}</span>
+                </li>
+                {{ end }}
+            {{ else }}
+                <li>No posts found</li>
+            {{ end }}
+        </ul>
+    </section>
+
+    <section class="subscribe">
+        <a href="https://benawise.substack.com" class="subscribe-link">Subscribe</a> to receive updates on new posts and projects.
+    </section>
+
+    <!-- Debug info -->
+    {{ if .Site.RegularPages }}
+    <div style="display: none">
+        {{ range .Site.RegularPages }}
+            <div>Title: {{ .Title }} | Section: {{ .Section }} | Type: {{ .Type }}</div>
+        {{ end }}
+    </div>
+    {{ end }}
+{{ end }}

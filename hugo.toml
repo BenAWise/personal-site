@@ -1,0 +1,14 @@
+baseURL = "/"
+languageCode = "en-us"
+title = "Ben A. Wise"
+theme = "personal-theme"
+
+[params]
+  description = "Personal blog of Ben A. Wise"
+  author = "Ben A. Wise"
+
+[outputs]
+  home = ["HTML", "RSS"]
+  section = ["HTML"]
+  taxonomy = ["HTML"]
+  term = ["HTML"]
