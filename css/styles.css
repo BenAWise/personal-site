@@ -68,7 +68,7 @@ header .container {
     position: relative;
     width: 100%;
     max-width: 700px;
-    padding: var(--spacing-lg);
+    padding: 0;
 }
 
 .site-title {
@@ -83,20 +83,12 @@ header .container {
 }
 
 @media (max-width: 768px) {
-    header .container {
-        padding: var(--spacing-md);
-    }
-    
     .theme-switch-wrapper {
         right: var(--spacing-md);
     }
 }
 
 @media (max-width: 480px) {
-    header .container {
-        padding: var(--spacing-sm);
-    }
-    
     .theme-switch-wrapper {
         right: var(--spacing-sm);
     }
