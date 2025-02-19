@@ -16,7 +16,6 @@
     --spacing-sm: 1rem;
     --spacing-md: 1.5rem;
     --spacing-lg: 2rem;
-    --header-height: 100px;
     
     /* Transitions */
     --transition-fast: 0.3s;
@@ -40,19 +39,14 @@
     box-sizing: border-box;
 }
 
-html {
-    overflow-y: scroll;
-}
-
 body {
     font-family: 'IBM Plex Mono', monospace;
     font-weight: 400;
-    letter-spacing: 0.02em;
+    letter-spacing: 0.02em; /* reduced kerning for monospace */
     background-color: var(--bg-color);
     color: var(--text-color);
     line-height: 1.6;
     transition: background-color var(--transition-fast), color var(--transition-fast);
-    padding-top: var(--header-height);
 }
 
 .container {
@@ -63,38 +57,54 @@ body {
 
 header {
     display: flex;
-    justify-content: center;
     align-items: center;
-    padding: var(--spacing-md) var(--spacing-lg);
-    height: var(--header-height);
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    background-color: var(--bg-color);
-    z-index: 1000;
-    transition: background-color var(--transition-fast);
+    margin: 0;
+    padding: 2rem 0;
+    height: auto;
+    position: relative;
 }
 
 header .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    padding: 0;
     position: relative;
+    width: 100%;
+    max-width: 700px;
+    padding: var(--spacing-lg);
+}
+
+.site-title {
+    margin: 0;
 }
 
 .theme-switch-wrapper {
     position: absolute;
-    right: 0;
+    right: var(--spacing-lg);
     top: 50%;
     transform: translateY(-50%);
 }
 
+@media (max-width: 768px) {
+    header .container {
+        padding: var(--spacing-md);
+    }
+    
+    .theme-switch-wrapper {
+        right: var(--spacing-md);
+    }
+}
+
+@media (max-width: 480px) {
+    header .container {
+        padding: var(--spacing-sm);
+    }
+    
+    .theme-switch-wrapper {
+        right: var(--spacing-sm);
+    }
+}
+
 /* Ensure main content starts at same position */
 main {
-    margin-top: var(--spacing-lg);
+    margin-top: 2rem;
 }
 
 /* Consistent spacing for article and homepage content */
@@ -104,9 +114,9 @@ main {
 
 .site-title {
     font-family: 'IBM Plex Mono', monospace;
-    font-weight: 500;
-    font-size: 1.75rem;
-    letter-spacing: -0.02em;
+    font-weight: 500; /* medium weight for title */
+    font-size: 1.75rem; /* slightly smaller for monospace */
+    letter-spacing: -0.02em; /* tighter spacing for title */
     margin: 0;
     padding: 0;
 }
@@ -114,7 +124,7 @@ main {
 .site-title-link {
     text-decoration: none;
     color: inherit;
-    display: inline-block;
+    display: inline-block; /* Prevents position shifting */
 }
 
 /* Theme toggle button */
@@ -238,7 +248,7 @@ section {
     border-top: 1px solid var(--text-color);
     font-family: 'IBM Plex Mono', monospace;
     font-weight: 400;
-    letter-spacing: 0.02em;
+    letter-spacing: 0.02em; /* reduced kerning for monospace */
 }
 
 .subscribe-link {
@@ -256,7 +266,7 @@ section {
 .description {
     font-family: 'IBM Plex Mono', monospace;
     font-weight: 400;
-    letter-spacing: 0.02em;
+    letter-spacing: 0.02em; /* reduced kerning for monospace */
     font-size: 0.9rem;
     margin: var(--spacing-xs) 0 var(--spacing-sm);
     color: var(--hover-color);
@@ -268,8 +278,8 @@ section {
         padding: var(--spacing-md);
     }
 
-    header {
-        padding: var(--spacing-sm);
+    header .container {
+        gap: var(--spacing-md);
     }
 
     .site-title {
@@ -288,6 +298,10 @@ section {
 @media (max-width: 480px) {
     .container {
         padding: var(--spacing-sm);
+    }
+
+    header .container {
+        gap: var(--spacing-sm);
     }
 
     .site-title {
