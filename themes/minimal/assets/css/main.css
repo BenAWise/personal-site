@@ -1,0 +1,75 @@
+/* Base styles */
+:root {
+    --bg: #E2DED9;
+    --text: #000000;
+    --max-width: 700px;
+    --padding: 2rem;
+}
+
+/* Reset */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Base elements */
+html {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+body {
+    font-family: 'IBM Plex Mono', monospace;
+    background: var(--bg);
+    color: var(--text);
+    margin: 0;
+    padding: 0;
+}
+
+/* Layout */
+header {
+    padding: var(--padding) 0;
+}
+
+nav {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 var(--padding);
+}
+
+main {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 var(--padding);
+}
+
+/* Typography */
+.site-title {
+    font-size: 1.75rem;
+    font-weight: 500;
+    text-decoration: none;
+    color: var(--text);
+}
+
+h1 {
+    font-size: 3rem;
+    margin: 2rem 0 1rem;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+}
+
+p {
+    margin-bottom: 1.5rem;
+}
+
+/* Links */
+a {
+    color: var(--text);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+}
+
+a:hover {
+    border-bottom-color: var(--text);
+} 

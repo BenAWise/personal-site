@@ -1,7 +1,7 @@
-baseURL = "/"
+baseURL = "https://benawise.com/"
 languageCode = "en-us"
 title = "Ben A. Wise"
-theme = "personal-theme"
+theme = "minimal"
 
 [params]
   description = "Personal blog of Ben A. Wise"
@@ -12,3 +12,19 @@ theme = "personal-theme"
   section = ["HTML"]
   taxonomy = ["HTML"]
   term = ["HTML"]
+
+[server]
+  [[server.headers]]
+    for = "/**"
+    [server.headers.values]
+      Cache-Control = "public, max-age=31536000"
+
+[build]
+  useResourceCacheWhen = "always"
+
+[minify]
+  minifyOutput = true
+
+[assets]
+  disableHLJS = true
+  disableFingerprinting = false
