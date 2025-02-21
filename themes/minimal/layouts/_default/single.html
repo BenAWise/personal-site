@@ -4,4 +4,15 @@
     <time>{{ .Date.Format "January 2, 2006" }}</time>
     {{ .Content }}
 </article>
+
+<div class="subscribe">
+    <form action="https://docs.google.com/forms/d/e/1FAIpQLSewNDx-ZIUjJJQNuidTuhbFqLqI--hidF2YVbQmg-DhtJlKtQ/formResponse" method="POST" target="hidden_iframe" class="subscribe-form" id="subscribe-form">
+        <input type="email" name="entry.245985499" id="subscribe-email" placeholder="your@email.com" class="subscribe-input" required>
+        <button type="submit" class="subscribe-button">Subscribe</button>
+    </form>
+    <span class="subscribe-text">Get updates on new posts and projects.</span>
+    <span id="subscribe-message" class="subscribe-message"></span>
+</div>
+
+<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
 {{ end }} 

@@ -183,8 +183,65 @@
             color: var(--text-alpha);
         }
         
+        .subscribe-text {
+            display: block;
+            margin-top: 8px;
+        }
+        
         .subscribe-link {
             border-bottom: 1px solid var(--text);
+        }
+
+        .subscribe-form {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 8px;
+        }
+        
+        .subscribe-input {
+            width: 232px;
+            padding: 8px 12px;
+            font-family: inherit;
+            font-size: 16px;
+            border: 0.25px solid var(--text-alpha);
+            background: var(--bg);
+            color: var(--text);
+            letter-spacing: -0.02em;
+            -webkit-appearance: none;
+            border-radius: 0;
+        }
+        
+        .subscribe-input:focus {
+            outline: none;
+            border-color: var(--text);
+        }
+        
+        .subscribe-input::placeholder {
+            color: var(--text-alpha);
+        }
+        
+        .subscribe-button {
+            padding: 8px 12px;
+            font-family: inherit;
+            font-size: 16px;
+            border: 0.25px solid var(--text-alpha);
+            background: var(--bg);
+            color: var(--text);
+            cursor: pointer;
+            -webkit-appearance: none;
+            border-radius: 0;
+        }
+        
+        .subscribe-button:hover {
+            background: var(--text);
+            color: var(--bg);
+        }
+
+        .subscribe-message {
+            display: block;
+            margin-top: 8px;
+            color: var(--text-alpha);
+            font-size: 14px;
         }
         
         /* Force scrollbar to prevent layout shift */
@@ -245,6 +302,34 @@
             if (!localStorage.getItem('theme')) {
                 setTheme(e.matches ? 'dark' : 'light');
             }
+        });
+
+        // Subscribe form handling
+        document.addEventListener('DOMContentLoaded', function() {
+            const forms = document.querySelectorAll('.subscribe-form');
+            forms.forEach(form => {
+                const messageEl = form.nextElementSibling.nextElementSibling;
+                const submitButton = form.querySelector('button[type="submit"]');
+                const emailInput = form.querySelector('input[type="email"]');
+                let submitted = false;
+
+                form.addEventListener('submit', function(e) {
+                    submitted = true;
+                    messageEl.textContent = 'Thanks for subscribing!';
+                    submitButton.disabled = true;
+                    
+                    // Clear the email field immediately for better UX
+                    setTimeout(() => {
+                        emailInput.value = '';
+                        submitButton.disabled = false;
+                        
+                        // Clear success message after 3 seconds
+                        setTimeout(() => {
+                            messageEl.textContent = '';
+                        }, 3000);
+                    }, 500);
+                });
+            });
         });
     </script>
 </body>
