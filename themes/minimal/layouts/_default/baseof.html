@@ -211,6 +211,27 @@
             border-radius: 0;
         }
         
+        @media (max-width: 704px) {
+            .subscribe-input {
+                width: auto;
+                flex: 1;
+                min-width: 200px;
+            }
+        }
+        
+        @media (max-width: 320px) {
+            .subscribe-form {
+                flex-direction: column;
+            }
+            .subscribe-input {
+                width: 100%;
+                min-width: unset;
+            }
+            .subscribe-button {
+                width: 100%;
+            }
+        }
+        
         .subscribe-input:focus {
             outline: none;
             border-color: var(--text);
