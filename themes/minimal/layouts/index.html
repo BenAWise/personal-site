@@ -1,7 +1,7 @@
 {{ define "main" }}
 <p class="intro">I'm a writer turned AI enthusiast turned "Holy shit we've just started merging with this weird, mathematically alien intelligence. I better write about this for posterity."</p>
 
-<h2>Latest Thoughts</h2>
+<h2>Latest Thoughts:</h2>
 <div class="post-list">
     {{ range first 5 (where .Site.RegularPages "Type" "posts") }}
     <div class="post-item">
